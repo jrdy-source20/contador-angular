@@ -6,6 +6,7 @@ import { Component, signal } from "@angular/core";
     templateUrl: './contador.html',
     styleUrl: './contador.scss'
 })
+
 export class Contador{
     protected contador = signal<number>(0);
 
