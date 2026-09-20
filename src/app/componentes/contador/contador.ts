@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 
 @Component({
     selector: 'app-contador',
@@ -6,4 +6,14 @@ import { Component } from "@angular/core";
     templateUrl: './contador.html',
     styleUrl: './contador.scss'
 })
-export class Contador{}
+export class Contador{
+    protected contador = signal<number>(0);
+
+    sumar(): void{
+        this.contador.update((v)=> v + 1); 
+    }
+
+    restar(): void{
+        this.contador.update((v)=> v - 1);
+    }
+}
